@@ -38,4 +38,16 @@ public class RegistrationTest {
         boolean validEmailAddressFalse = registration.emailAddress("abc.@gmail.com");
         Assert.assertEquals(false,validEmailAddressFalse);
     }
+
+    @Test
+    public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
+        boolean validPhoneNumberTrue = registration.phoneNumber("91 9404442544");
+        Assert.assertEquals(true,validPhoneNumberTrue);
+    }
+
+    @Test
+    public void givenPhoneNumber_WhenProper_ShouldReturnFalse() {
+        boolean validPhoneNumberFalse = registration.phoneNumber("940442544");
+        Assert.assertEquals(false,validPhoneNumberFalse);
+    }
 }
