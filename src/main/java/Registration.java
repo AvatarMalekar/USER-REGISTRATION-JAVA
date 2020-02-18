@@ -5,6 +5,7 @@ public class Registration {
     final String PASSWORD_PATTERN1="[A-Za-z0-9@#$%]{8,20}";
     final String PASSWORD_PATTERN2="(?=.*[A-Z])[A-Za-z0-9@#$%]{7,20}";
     final String PASSWORD_PATTERN3="(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9@#$%]{8,20}";
+    final String PASSWORD_PATTERN4= "(?=.*[0-10])(?=[^@|#|$|&|%]*[@|&|$|#|%][^@|#|$|&|%]*$)(?=.*[a-z])(?=.*[A-Z])[A-Za-z0-9@#$%]{8,20}";
     public boolean firstName(String fname) {
         return fname.matches(NAME_CHECKER);
     }
@@ -31,5 +32,9 @@ public class Registration {
 
     public boolean passwordPatternThree(String passwd3) {
         return passwd3.matches(PASSWORD_PATTERN3);
+    }
+
+    public boolean passwordPatternFour(String passwd4) {
+        return passwd4.matches(PASSWORD_PATTERN4);
     }
 }
