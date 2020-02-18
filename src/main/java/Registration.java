@@ -3,4 +3,8 @@ public class Registration {
     public boolean firstName(String fname) {
         return fname.matches(NAME_CHECKER);
     }
+
+    public boolean lastName(String lname) {
+        return lname.matches(NAME_CHECKER);
+    }
 }
