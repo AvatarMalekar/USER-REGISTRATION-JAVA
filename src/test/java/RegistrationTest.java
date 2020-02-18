@@ -52,14 +52,26 @@ public class RegistrationTest {
     }
 
     @Test
-    public void givenPassword_WhenProper_ShouldReturnTrue() {
-        boolean validPasswordTrue = registration.password("aAv@#$gd");
-        Assert.assertEquals(true,validPasswordTrue);
+    public void Password() {
+        boolean validPasswordPatternOneTrue = registration.PasswordPatternOne("aAv@#$gd");
+        Assert.assertEquals(true,validPasswordPatternOneTrue);
     }
 
     @Test
-    public void givenPassword_WhenProper_ShouldReturnFalse() {
-        boolean validPasswordFalse = registration.password("avsgh");
-        Assert.assertEquals(false,validPasswordFalse);
+    public void givenPasswordPatternOne_WhenProper_ShouldReturnFalse() {
+        boolean validPasswordPatternOneFalse = registration.PasswordPatternOne("avsgh");
+        Assert.assertEquals(false,validPasswordPatternOneFalse);
+    }
+
+    @Test
+    public void givenPasswordPatternTwo_WhenProper_ShouldReturnTrue() {
+        boolean validPasswordPatternTwoTrue = registration.passwordPatternTwo("AdfbdA@A");
+        Assert.assertEquals(true,validPasswordPatternTwoTrue);
+    }
+
+    @Test
+    public void givenPasswordPatternTwo_WhenProper_ShouldReturnFalse() {
+        boolean validPasswordPatternTwoFalse = registration.passwordPatternTwo("asdfghjr");
+        Assert.assertEquals(false,validPasswordPatternTwoFalse);
     }
 }
