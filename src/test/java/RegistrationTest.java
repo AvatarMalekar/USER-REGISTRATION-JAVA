@@ -74,4 +74,16 @@ public class RegistrationTest {
         boolean validPasswordPatternTwoFalse = registration.passwordPatternTwo("asdfghjr");
         Assert.assertEquals(false,validPasswordPatternTwoFalse);
     }
+
+    @Test
+    public void givenPasswordPatternThree_WhenProper_ShouldReturnTrue() {
+        boolean validPasswordPatternThreeTrue = registration.passwordPatternThree("adA2fjaf");
+        Assert.assertEquals(true,validPasswordPatternThreeTrue);
+    }
+
+    @Test
+    public void givenPasswordPatternThree_WhenProper_ShouldReturnFalse() {
+        boolean validPasswordPatternThreeFalse = registration.passwordPatternThree("asdjfdadj");
+        Assert.assertEquals(false,validPasswordPatternThreeFalse);
+    }
 }
