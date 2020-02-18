@@ -50,4 +50,16 @@ public class RegistrationTest {
         boolean validPhoneNumberFalse = registration.phoneNumber("940442544");
         Assert.assertEquals(false,validPhoneNumberFalse);
     }
+
+    @Test
+    public void givenPassword_WhenProper_ShouldReturnTrue() {
+        boolean validPasswordTrue = registration.password("aAv@#$gd");
+        Assert.assertEquals(true,validPasswordTrue);
+    }
+
+    @Test
+    public void givenPassword_WhenProper_ShouldReturnFalse() {
+        boolean validPasswordFalse = registration.password("avsgh");
+        Assert.assertEquals(false,validPasswordFalse);
+    }
 }
