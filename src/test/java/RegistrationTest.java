@@ -26,4 +26,16 @@ public class RegistrationTest {
         boolean validLastNameFalse=registration.lastName("dgkdga");
         Assert.assertEquals(false,validLastNameFalse);
     }
+
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue() {
+        boolean validEmailAddressTrue = registration.emailAddress("abc@gmail.com");
+        Assert.assertEquals(true,validEmailAddressTrue);
+    }
+
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnFalse() {
+        boolean validEmailAddressFalse = registration.emailAddress("abc.@gmail.com");
+        Assert.assertEquals(false,validEmailAddressFalse);
+    }
 }
